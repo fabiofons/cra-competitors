@@ -4,4 +4,8 @@
 
 # Cycling RCA
 
-1. Set the db up ```docker-compose up -d```
+1. Clone the repository
+2. Install dependencies ```pnpm install```
+3. Clone and rewrite ```.env.template``` to ```.env```
+4. Set the db up ```docker-compose up -d```
+5. Run development envorinment ```pnpm run start:dev```
