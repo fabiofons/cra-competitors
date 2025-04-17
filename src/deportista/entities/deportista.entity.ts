@@ -22,4 +22,9 @@ export class Deportista {
     unique: true,
   })
   dorsal: number;
+
+  @Column('text', {
+    unique: true,
+  })
+  equipo: string;
 }
