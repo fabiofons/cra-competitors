@@ -27,4 +27,10 @@ export class Deportista {
     unique: true,
   })
   equipo: string;
+
+  @Column({
+    type: 'date',
+    nullable: false,
+  })
+  fechaNacimiento: Date;
 }

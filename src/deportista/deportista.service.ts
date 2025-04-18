@@ -1,10 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { CreateDeportistaDto } from './dto/create-deportista.dto';
 import { UpdateDeportistaDto } from './dto/update-deportista.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Deportista } from './entities/deportista.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class DeportistaService {
-  create(createDeportistaDto: CreateDeportistaDto) {
+  constructor(
+    @InjectRepository(Deportista)
+    private readonly deportistaRepository: Repository<Deportista>,
+  ) {}
+  async create(createDeportistaDto: CreateDeportistaDto) {
     return 'This action adds a new deportista';
   }
 
