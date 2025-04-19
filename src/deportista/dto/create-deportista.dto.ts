@@ -1,12 +1,4 @@
-import {
-  IsDate,
-  IsInt,
-  IsOptional,
-  IsPositive,
-  IsString,
-  Min,
-  MinLength,
-} from 'class-validator';
+import { IsDateString, IsInt, IsString, Min, MinLength } from 'class-validator';
 
 export class CreateDeportistaDto {
   @IsString()
@@ -18,15 +10,13 @@ export class CreateDeportistaDto {
   apellido: string;
 
   @IsInt()
-  @IsPositive()
   @Min(1)
-  @IsOptional()
   dorsal?: number;
 
   @IsString()
   @MinLength(3)
   equipo: string;
 
-  @IsDate()
-  fechaNacimiento: Date;
+  @IsDateString()
+  fechaNacimiento: string;
 }

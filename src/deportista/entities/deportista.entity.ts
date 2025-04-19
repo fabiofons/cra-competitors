@@ -24,7 +24,7 @@ export class Deportista {
   dorsal: number;
 
   @Column('text', {
-    unique: true,
+    nullable: false,
   })
   equipo: string;
 
